@@ -12,20 +12,11 @@ body {
 }
 
 #board {
-  background-color: #d9d9d9;
-  padding-top: 150px;
   margin-left: auto;
   margin-right: auto;
-  border-style: solid;
-  border-color: #ffffff;
 }
 
 .box {
-  width: 400px;
-  height: 300px;
-}
-
-.square {
-  border-style: solid;
-  border-color: #ffffff;
+  width: 405px;
+  height: 324px;
 }

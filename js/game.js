@@ -1,31 +1,52 @@
-var boundx = 400;
-var boundy = 300;
-var size = 81;
 
-var x = Math.round(boundx/size);
-var y = Math.round(boundy/size);
+function setAtt(obj,table) {
+	for(var i=0; i<table.length; i++) {
+		obj.setAttribute(table[i][0],table[i][1]);
+	}
+}
 
 function square(node) {
   var e = document.createElement('input');
 
-  e.setAttribute("class","square");
-  e.setAttribute("pattern","[0-9]{1,2}");
-  e.style.width = x;
-  e.style.height = y;
+  //e.setAttribute("pattern","[0-9]{1,2}");else
+  setAtt(e,[["pattern", "[0-9]{1,2}"],["style","text-align: center; width: 45px; height: 36px; border: solid; border-width: 0px; background-color: white"]]);
   node.appendChild(e);
   return e;
 }
+
+
+function makeSquares() {
+  var gtable = document.createElement("Table");
+  document.getElementById("board").appendChild(gtable);
+  setAtt(gtable,[["style","padding: 0px; margin: 0px; width: 100%; height: 100%;"]])
+
+  for(var y=0; y<9; y++) { // y
+    var row = gtable.insertRow(y);
+
+    for(var x = 0; x<9; x++) {
+        var cell = row.insertCell(x);
+        setAtt(cell, [["style", "padding: 0px;"]])
+        square(cell);
+    }
+
+  }
+}
+
+/*
 
 function makeSquares() {
   //
   var parentNode = document.getElementById("board");
 
-  for(var i=0; i<boundx; i+=x) {
-    for(var j=0; j<boundy; j+=y){
-      var sq = square(parentNode);
-      sq.style.left = i;
-      sq.style.top = y;
+
+  for(var i=0; i<9; i++) {
+    for(var j=0; j<9; j++){
+      if(j%3 == 0) s++;
+      square(parentNode);
+
     }
+
   }
 
 }
+*/
