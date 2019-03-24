@@ -18,10 +18,10 @@ function square(node) {
 
 function makeSquares() {
   //
-  var parentNode = document.getElementbyId("board");
+  var parentNode = document.getElementById("board");
 
   for(var i=0; i<boundx; i+=x) {
-    for(var j=0; j<boundy; j+=y;){
+    for(var j=0; j<boundy; j+=y){
       var sq = square(parentNode);
       sq.style.left = i;
       sq.style.top = y;
