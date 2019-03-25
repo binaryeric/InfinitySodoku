@@ -1,3 +1,5 @@
+var ingame = true;
+
 
 function setAtt(obj,table) {
 	for(var i=0; i<table.length; i++) {
@@ -78,15 +80,21 @@ function timer(start_time) {
   document.getElementById("timer").innerHTML = format(start_time--);
 
   setTimeout(function() {
-    if(start_time > 0) {
+    if(start_time > 0 && ingame == true) {
       timer(start_time);
-    } else {
+    } else if(ingame == false) {
+			// TODO check solutions
+			alert("YOU LOOSE");
+		} else {
       alert("Time's up!");
     }
 
   }, 1000);
 }
 
+function submitbutton() {
+	ingame = false;
+}
 
 window.addEventListener("load",function() {
   makeSquares();
