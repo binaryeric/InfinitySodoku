@@ -1,5 +1,19 @@
 var ingame = true;
 
+// sample board:
+var values = [
+[0,0,0,0,0,0,0,7,3],
+[0,0,0,0,2,0,0,0,0],
+[0,0,2,1,5,0,0,0,0],
+[5,0,1,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0],
+[0,0,0,9,0,3,0,0,4],
+[0,0,0,0,7,0,1,0,0],
+[0,8,0,0,0,0,0,0,0],
+[3,4,0,0,0,6,0,0,0]
+];
+
+
 
 function setAtt(obj,table) {
 	for(var i=0; i<table.length; i++) {
@@ -26,7 +40,10 @@ function makeSquares() {
 
     for(var x = 0; x<9; x++) {
         var cell = row.insertCell(x);
-        setAtt(cell, [["style", "padding: 0px;"]])
+				if(values[y][x] != 0) {
+					setAtt(cell,[["value",String(values[y][x])]]);
+				}
+        setAtt(cell, [["style", "padding: 0px;"],["pattern","[0-9]{1,2}"]])
         var sq = square(cell);
     }
   }
@@ -88,7 +105,6 @@ function timer(start_time) {
 		} else {
       alert("Time's up!");
     }
-
   }, 1000);
 }
 
