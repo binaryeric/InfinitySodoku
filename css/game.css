@@ -12,6 +12,8 @@ body {
 }
 
 #board {
+  position: relative;
+  margin-top: 150px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -19,4 +21,8 @@ body {
 .box {
   width: 405px;
   height: 324px;
+}
+
+.rainbow {
+  
 }

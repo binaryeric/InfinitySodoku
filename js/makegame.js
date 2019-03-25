@@ -7,7 +7,6 @@ function setAtt(obj,table) {
 
 function square(node) {
   var e = document.createElement('input');
-
   //e.setAttribute("pattern","[0-9]{1,2}");else
   setAtt(e,[["pattern", "[0-9]{1,2}"],["style","text-align: center; width: 43px; height: 34px; border: solid; border-width: 0px; background-color: white"]]);
   node.appendChild(e);
@@ -26,27 +25,26 @@ function makeSquares() {
     for(var x = 0; x<9; x++) {
         var cell = row.insertCell(x);
         setAtt(cell, [["style", "padding: 0px;"]])
-        square(cell);
+        var sq = square(cell);
     }
 
   }
 }
 
-/*
+function boxSquares() {
+  var bd = document.getElementById("board");
 
-function makeSquares() {
-  //
-  var parentNode = document.getElementById("board");
-
-
-  for(var i=0; i<9; i++) {
-    for(var j=0; j<9; j++){
-      if(j%3 == 0) s++;
-      square(parentNode);
-
-    }
-
+  for(var i=0; i<4; i++) {
+    var lnx = document.createElement("div");
+    var lny = document.createElement("div");
+    setAtt(lnx,[["class","rainbow"],["style","background-color: #606060; width: 405px; height: 10px; position: absolute; top: "+String(i*113)+"px;"]]);
+    setAtt(lny,[["class","rainbow"],["style","background-color: #606060; width: 10px; height: 324px; position: absolute; left: "+String(i*133)+"px;"]])
+    bd.appendChild(lnx);
+    bd.appendChild(lny);
   }
-
 }
-*/
+
+window.addEventListener("load",function() {
+  makeSquares();
+  boxSquares();
+});
