@@ -64,9 +64,32 @@ function bg (e,rgb) {
 	return rgb;
 }
 
+function format(t) {
+  var min = Math.floor(t/60);
+  var sec = Math.floor(t%60);
+
+  let m = min < 10 ? "0" + String(min) : String(min);
+  let s = sec < 10 ? "0" + String(sec) : String(sec);
+
+  return m + ":" + s;
+}
+
+function timer(start_time) {
+  document.getElementById("timer").innerHTML = format(start_time--);
+
+  setTimeout(function() {
+    if(start_time > 0)
+      timer(start_time);
+
+  }, 1000);
+}
+
+
 window.addEventListener("load",function() {
   makeSquares();
   boxSquares();
+
+  timer(600);
 
   var borders = document.getElementsByClassName("borders");
   for (let i = 0; i < borders.length; i++) {
