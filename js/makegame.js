@@ -78,8 +78,11 @@ function timer(start_time) {
   document.getElementById("timer").innerHTML = format(start_time--);
 
   setTimeout(function() {
-    if(start_time > 0)
+    if(start_time > 0) {
       timer(start_time);
+    } else {
+      alert("Time's up!");
+    }
 
   }, 1000);
 }
@@ -89,6 +92,7 @@ window.addEventListener("load",function() {
   makeSquares();
   boxSquares();
 
+  // TODO get difficulty and use that to determine time:
   timer(600);
 
   var borders = document.getElementsByClassName("borders");
