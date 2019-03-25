@@ -38,9 +38,9 @@ function boxSquares() {
     var lnx = document.createElement("div");
     var lny = document.createElement("div");
     setAtt(lnx,[["class","rainbow"],["style","background-color: #606060; width: 405px; height: 10px; position: absolute; top: "+String(i*113)+"px;"]]);
-    setAtt(lny,[["class","rainbow"],["style","background-color: #606060; width: 10px; height: 324px; position: absolute; left: "+String(i*133)+"px;"]])
-    bd.appendChild(lnx);
+    setAtt(lny,[["class","rainbow"],["style","background-color: #606060; width: 10px; height: 349px; position: absolute; top: 0; left: "+String(i*133)+"px;"]])
     bd.appendChild(lny);
+    bd.appendChild(lnx);
   }
 }
 
