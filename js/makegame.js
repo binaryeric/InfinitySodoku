@@ -109,6 +109,7 @@ function timer(start_time) {
 			window.location.replace("./index.html");
 		} else {
       alert("Time's up!");
+	  window.location.replace("./index.html");
     }
   }, 1000);
 }
