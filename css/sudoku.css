@@ -63,6 +63,7 @@ fieldset{
 	background-color: white;
 	margin-left: auto;
 	margin-right: auto;
+	width: 1540px;
 }
 
 #menu{
@@ -82,10 +83,11 @@ fieldset{
 
 .backdrop{
 	display: inline-block;
-	background-color: green;
+	background-color: #294BC0;
 	width: 300px;
 	height: 300px;
 	padding: 20px;
+	margin: 20px;
 }
 
 .show{
@@ -96,4 +98,9 @@ fieldset{
 
 .description{
 	font-size: 30px;
+	font-family: Stencil Std, fantasy;
+	font-style: normal;
+	font-weight: 400;
+	color: red;
+
 }
