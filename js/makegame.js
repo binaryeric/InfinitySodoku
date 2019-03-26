@@ -21,9 +21,9 @@ function setAtt(obj,table) {
 	}
 }
 
+//Creates a single square on the board
 function square(node) {
   var e = document.createElement('input');
-  //e.setAttribute("pattern","[0-9]{1,2}");else
   setAtt(e,[["pattern", "[0-9]{1,2}"],["style","text-align: center; width: 43px; height: 34px; border: solid; border-width: 0px; background-color: white"]]);
   node.appendChild(e);
   return e;
