@@ -79,3 +79,18 @@ fieldset{
 	text-align: left;
 	color: red;
 }
+
+.backdrop{
+	display: inline-block;
+	background-color: green;
+}
+
+.show{
+	height: 200px;
+	width: 200px;
+	position: relative;
+}
+
+.description{
+	font-size: 30px;
+}
