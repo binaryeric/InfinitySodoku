@@ -1,4 +1,4 @@
-html{
+body{
 	background-image: url("../assets/background.jpg");
 	height: 100%;
 	background-position: center;
@@ -30,11 +30,13 @@ h1{
 	font-style: normal;
 	font-weight: 400;
 }
+
 font{
 	font-family: Stencil Std, fantasy;
 	font-style: normal;
 	font-weight: 400;
 }
+
 p{
 	margin-top: 15px;
 	font-size: 40px;
@@ -53,6 +55,7 @@ a:hover{
 	text-decoration: underline;
 }
 a:active{
+	text-decoration: underline;
 	color: black;
 }
 

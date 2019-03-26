@@ -21,15 +21,15 @@ function setAtt(obj,table) {
 	}
 }
 
+//Creates a single square on the board
 function square(node) {
   var e = document.createElement('input');
-  //e.setAttribute("pattern","[0-9]{1,2}");else
   setAtt(e,[["pattern", "[0-9]{1,2}"],["style","text-align: center; width: 43px; height: 34px; border: solid; border-width: 0px; background-color: white"]]);
   node.appendChild(e);
   return e;
 }
 
-
+//Makes the individual squares into a 9x9 grid
 function makeSquares() {
   var gtable = document.createElement("Table");
   document.getElementById("board").appendChild(gtable);
@@ -49,6 +49,7 @@ function makeSquares() {
   }
 }
 
+//Generates the the background for the sudoku board (the big # looking one that changes colors)
 function boxSquares() {
   var bd = document.getElementById("board");
 
@@ -62,6 +63,7 @@ function boxSquares() {
   }
 }
 
+//Changes the color of the board as the timer runs
 function bg (e,rgb) {
 	if (rgb[0] <= 255 && rgb[1] == 0 && rgb[2] == 0)
 		rgb[0] ++;
@@ -83,6 +85,7 @@ function bg (e,rgb) {
 	return rgb;
 }
 
+//Converts the timer to a minute and second system instead of MS
 function format(t) {
   var min = Math.floor(t/60);
   var sec = Math.floor(t%60);
@@ -93,6 +96,7 @@ function format(t) {
   return m + ":" + s;
 }
 
+//Starts the Timer and checks for a lose game condition
 function timer(start_time) {
   document.getElementById("timer").innerHTML = format(start_time--);
 
@@ -101,17 +105,21 @@ function timer(start_time) {
       timer(start_time);
     } else if(ingame == false) {
 			// TODO check solutions
-			alert("YOU LOOSE");
+			alert("YOU LOSE");
+			window.location.replace("./index.html");
 		} else {
       alert("Time's up!");
+	  window.location.replace("./index.html");
     }
   }, 1000);
 }
 
+//Changes the state of the game when the board is submitted
 function submitbutton() {
 	ingame = false;
 }
 
+//Calls the entire board creation program when the main page loads
 window.addEventListener("load",function() {
   makeSquares();
   boxSquares();
@@ -119,6 +127,7 @@ window.addEventListener("load",function() {
   // TODO get difficulty and use that to determine time:
   timer(600);
 
+  
   var borders = document.getElementsByClassName("borders");
   for (let i = 0; i < borders.length; i++) {
     let rgb = [0,0,0];

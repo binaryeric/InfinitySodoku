@@ -1,5 +1,6 @@
 var timer = document.getElementById("timer");
 
+//Converts the time in Milliseconds to Mins and Secs
 function format(t) {
   var min = Math.floor(t/60);
   var sec = Math.floor(t%60);
@@ -10,6 +11,7 @@ function format(t) {
   return m + ":" + s;
 }
 
+//Starts the timer
 function timer(start_time) {
 
   setTimeout(function() {
@@ -17,8 +19,7 @@ function timer(start_time) {
   }, 1000);
 }
 
+//Sets the max time for the timer system.
 $(document).on('click','body *',function(){
   timer(1200);
-    //  $(this) = your current element that clicked.
-    // additional code
 });
