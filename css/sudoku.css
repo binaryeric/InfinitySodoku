@@ -83,12 +83,15 @@ fieldset{
 .backdrop{
 	display: inline-block;
 	background-color: green;
+	width: 300px;
+	height: 300px;
+	padding: 20px;
 }
 
 .show{
-	height: 200px;
-	width: 200px;
-	position: relative;
+	height: 250px;
+	width: 250px;
+	margin-left: 25px;
 }
 
 .description{
