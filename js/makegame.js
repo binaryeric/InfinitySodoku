@@ -93,6 +93,7 @@ function format(t) {
   return m + ":" + s;
 }
 
+//Starts the Timer and checks for a lose game condition
 function timer(start_time) {
   document.getElementById("timer").innerHTML = format(start_time--);
 
@@ -101,7 +102,8 @@ function timer(start_time) {
       timer(start_time);
     } else if(ingame == false) {
 			// TODO check solutions
-			alert("YOU LOOSE");
+			alert("YOU LOSE");
+			window.location.replace("./index.html");
 		} else {
       alert("Time's up!");
     }
@@ -112,6 +114,7 @@ function submitbutton() {
 	ingame = false;
 }
 
+//Calls the entire board creation program when the main page loads
 window.addEventListener("load",function() {
   makeSquares();
   boxSquares();
