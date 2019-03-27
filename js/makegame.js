@@ -124,7 +124,20 @@ window.addEventListener("load",function() {
   boxSquares();
 
   // TODO get difficulty and use that to determine time:
-  timer(600);
+  // complete -peter
+  var difficulty = localStorage.getItem("difficulty");
+  document.getElementById("test").innerHTML = "Game Difficulty: "+difficulty;
+  if (difficulty == "easy") {
+	timer(500);
+  } else if (difficulty == "medium") {
+	timer(400);  
+  } else if (difficulty == "hard") {
+	timer(300);  
+  } else if (difficulty == "veryhard") {
+	timer(200);  
+  } else {
+	timer(600);
+  }
 
   
   var borders = document.getElementsByClassName("borders");

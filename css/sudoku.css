@@ -81,7 +81,7 @@ fieldset{
 	color: red;
 }
 
-.backdrop{
+.back{
 	display: inline-block;
 	background-color: #294BC0;
 	width: 300px;
@@ -90,13 +90,13 @@ fieldset{
 	margin: 20px;
 }
 
-.show{
+.picture{
 	height: 250px;
 	width: 250px;
 	margin-left: 25px;
 }
 
-.description{
+.title{
 	font-size: 30px;
 	font-family: Stencil Std, fantasy;
 	font-style: normal;
