@@ -5,7 +5,8 @@
 ```
   - The game's main file is called "index.html".
   - When running that file, all the other HTML, CSS and Javascript files are linked to it.
-  - It is recommended that the game only be run from index.html. While the program will open if any of the .html files are open, some of them require information that is passed from file to file for the game to run properly.
+  - It is recommended that the game only be run from index.html. While the program will open 
+  if any of the .html files are open, some of them require information that is passed from file to file for the game to run properly.
 ```
 
 ###### **Includes the following use cases:**
