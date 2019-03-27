@@ -48,3 +48,31 @@ body {
 .rainbow {
 
 }
+
+#menu{
+	float: left;
+	position: relative;
+	margin-right: 20px;
+	height: 30px;
+	width: 30px;
+}
+
+#return{
+	margin-top: 10px;
+}
+
+a:link{
+	text-decoration: none;
+	color: white;
+}
+a:visited{
+	text-decoration: none;
+	color: white;
+}
+a:hover{
+	text-decoration: underline;
+}
+a:active{
+	text-decoration: underline;
+	color: black;
+}
