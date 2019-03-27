@@ -3,6 +3,7 @@
 
 ###### **How to properly run the code**
 ```
+  - It is advised that the program be run with the Google Chrome Browser
   - The game's main file is called "index.html".
   - When running that file, all the other HTML, CSS and Javascript files are linked to it.
   - It is recommended that the game only be run from index.html. While the program will open 
