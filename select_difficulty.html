@@ -4,33 +4,44 @@
 <head>
 	<title>Difficulty Select</title>
 	<link rel="stylesheet" type="text/css" href="css/sudoku.css">
+	
+<script>
+	function difselect(value,object) {
+		//document.getElementById("test2").innerHTML = "button test";
+		localStorage.setItem("difficulty", value);
+	}
+</script>
+
 </head>
 
 <body>
-	<h1>Choose Your Difficulty</h1>
+	<h1 id="test2">Choose Your Difficulty</h1>
 	
 	<div class="options">
-		<p><a href="Game.html"><font>Very Easy</font></a></p>
+		<p><a href="Game.html" onclick="difselect('veryeasy',this)"><font>Very Easy</font></a></p>
 	</div>
 	
 	<div class="options">
-		<p><a href="Game.html"><font>Easy</font></a></p>
+		<p>
+		<!--<button onclick="difselect()" type="button">-->
+		<a href="game.html" onclick="difselect('easy',this)"><font>Easy</font></a></button>
+		</p>
 	</div>
 	
 	<div class="options">
-		<p><a href="Game.html"><font>Medium</font></a></p>
+		<p><a href="Game.html" onclick="difselect('medium',this)"><font>Medium</font></a></p>
 	</div>
 	
 	<div class="options">
-		<p><a href="Game.html"><font>Hard</font></a></p>
+		<p><a href="Game.html" onclick="difselect('hard',this)"><font>Hard</font></a></p>
 	</div>
 	
 	<div class="options">
-		<p><a href="Game.html"><font>Very Hard</font></a></p>
+		<p><a href="Game.html" onclick="difselect('veryhard',this)"><font>Very Hard</font></a></p>
 	</div>
 	
 	<div id="return">
-		<a href="index.html"> <img id="menu" src="assets/return.png"><font>Return to Menu<font></a>
+		<a href="index.html"> <img id="menu" src="Images/return.png"><font>Return to Menu<font></a>
 	</div>	
 </body>
 
