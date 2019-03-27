@@ -41,10 +41,12 @@ function makeSquares() {
     for(var x = 0; x<9; x++) {
         var cell = row.insertCell(x);
 				if(values[y][x] != 0) {
-					setAtt(cell,[["value",String(values[y][x])]]);
+					setAtt(cell,[["value",String(values[y][x])],["id",String(values[y][x])],["style","text-align: center; width: 43px; height: 34px; border: solid; border-width: 0px; background-color: white"]]);
+					document.getElementById(String(values[y][x])).innerHTML = String(values[y][x]);
+				} else {
+					setAtt(cell, [["style", "padding: 0px;"],["pattern","[0-9]{1,2}"]])
+					var sq = square(cell);
 				}
-        setAtt(cell, [["style", "padding: 0px;"],["pattern","[0-9]{1,2}"]])
-        var sq = square(cell);
     }
   }
 }
