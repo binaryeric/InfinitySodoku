@@ -105,8 +105,7 @@ function timer(start_time) {
       timer(start_time);
     } else if(ingame == false) {
 			// TODO check solutions
-			alert("YOU LOSE");
-			window.location.replace("./index.html");
+			alert("The board you have entered is incorrect");
 		} else {
       alert("Time's up!");
 	  window.location.replace("./index.html");
