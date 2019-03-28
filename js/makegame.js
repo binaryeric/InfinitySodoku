@@ -1,7 +1,7 @@
 var ingame = true;
 
 // sample board:
-var values = [
+var sampleValues = [
 [0,0,0,0,0,0,0,7,3],
 [0,0,0,0,2,0,0,0,0],
 [0,0,2,1,5,0,0,0,0],
@@ -13,7 +13,124 @@ var values = [
 [3,4,0,0,0,6,0,0,0]
 ];
 
+var veryEasy = [ 
+[0,1,5,4,2,6,0,0,9],
+[0,7,0,1,5,9,0,2,0],
+[0,4,2,8,3,0,1,0,5],
+[0,9,0,6,0,3,0,8,7],
+[5,0,7,0,4,2,3,0,6],
+[1,0,3,7,0,5,0,9,4],
+[0,0,1,0,9,8,6,4,0],
+[6,2,0,0,0,4,9,5,1],
+[0,5,9,2,0,0,8,7,0]
+];
 
+var easy = [
+[0,3,9,8,0,0,6,4,0],
+[2,0,1,6,5,4,9,0,0],
+[0,0,0,0,0,9,1,8,0],
+[5,0,8,0,4,0,3,0,0],
+[1,7,0,0,2,8,4,0,6],
+[4,6,2,1,9,3,0,0,7],
+[8,0,0,0,6,0,0,3,0],
+[0,0,5,2,0,0,0,0,9],
+[9,0,0,0,3,7,0,0,0]
+];
+
+var medium = [
+[6,8,9,0,0,2,0,0,1],
+[7,0,0,0,0,4,0,0,0],
+[0,4,5,0,1,0,0,3,7],
+[0,0,0,0,0,3,8,0,0],
+[3,0,0,0,0,1,0,4,0],
+[0,0,0,9,5,7,0,0,2],
+[1,0,0,0,3,9,5,0,0],
+[0,0,0,0,4,0,0,0,0],
+[4,0,7,1,8,5,6,0,9]
+];
+
+var hard = [
+[9,5,0,0,0,0,1,0,0],
+[0,0,0,0,8,5,0,0,0],
+[0,6,0,0,3,1,0,0,4],
+[0,7,9,5,0,0,0,0,0],
+[0,0,0,1,0,0,9,0,0],
+[0,3,0,0,0,0,4,8,0],
+[1,2,0,0,0,9,0,0,0],
+[4,0,0,0,1,2,0,0,6],
+[0,0,0,0,7,0,0,3,0]
+];
+
+var veryHard = [
+[0,0,0,0,0,0,0,7,3],
+[0,0,0,0,2,0,0,0,0],
+[0,0,2,1,5,0,0,0,0],
+[5,0,1,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0],
+[0,0,0,9,0,3,0,0,4],
+[0,0,0,0,7,0,1,0,0],
+[0,8,0,0,0,0,0,0,0],
+[3,4,0,0,0,6,0,0,0]
+];
+
+var veryEasySol = [ 
+[8,1,5,4,2,6,7,3,9],
+[3,7,6,1,5,9,4,2,8],
+[9,4,2,8,3,7,1,0,5],
+[2,9,4,6,1,3,5,8,7],
+[5,8,7,9,4,2,3,0,6],
+[1,6,3,7,8,5,2,9,4],
+[7,3,1,5,9,8,6,4,2],
+[6,2,8,3,7,4,9,5,1],
+[4,5,9,2,6,1,8,7,3],
+];
+
+var easySol = [
+[7,3,9,8,1,2,6,4,5],
+[2,8,1,6,5,4,9,7,3],
+[6,5,4,3,7,9,1,8,2],
+[5,9,8,7,4,6,3,2,1],
+[1,7,3,5,2,8,4,9,6],
+[4,6,2,1,9,3,0,0,7],
+[8,1,7,9,6,5,2,3,4],
+[3,4,5,2,8,1,7,6,9],
+[9,2,6,4,3,7,5,1,8]
+];
+
+var mediumSol = [
+[6,8,9,3,7,2,4,5,1],
+[7,1,3,5,9,4,2,6,8],
+[2,4,5,6,1,8,9,3,7],
+[5,7,1,4,2,3,8,9,6],
+[3,9,2,8,6,1,7,4,5],
+[8,6,4,9,5,7,3,1,2],
+[1,2,6,7,3,9,5,8,4],
+[9,5,8,2,4,6,1,7,3],
+[4,3,7,1,8,5,6,2,9]
+];
+
+var hardSol = [
+[9,5,8,4,6,7,1,2,3],
+[3,1,4,2,8,5,6,7,9],
+[7,6,2,9,3,1,8,5,4],
+[6,7,9,5,4,8,3,1,2],
+[8,4,5,1,2,3,9,6,7],
+[2,3,1,7,9,5,4,8,5],
+[1,2,3,6,5,9,7,4,8],
+[5,9,6,8,7,4,2,3,1]
+];
+
+var veryHardSol = [
+[8,1,5,6,9,4,2,7,3],
+[9,7,4,3,2,8,6,5,1],
+[6,3,2,1,5,7,8,4,9],
+[5,9,1,7,4,2,3,8,6],
+[4,6,3,5,8,1,7,9,2],
+[7,2,8,9,6,3,5,1,4],
+[2,5,6,4,7,9,1,3,8],
+[1,8,9,2,3,5,4,6,7],
+[3,4,7,8,1,6,9,2,5]
+];
 
 function setAtt(obj,table) {
 	for(var i=0; i<table.length; i++) {
@@ -22,9 +139,9 @@ function setAtt(obj,table) {
 }
 
 //Creates a single square on the board
-function square(node) {
+function square(node, y, x) {
   var e = document.createElement('input');
-  setAtt(e,[["pattern", "[0-9]{1,2}"],["style","text-align: center; width: 43px; height: 34px; border: solid; border-width: 0px; background-color: white"]]);
+  setAtt(e,[["type","text"],["id",String(y)+String(x)],["pattern", "[0-9]{1,2}"],["style","text-align: center; width: 43px; height: 34px; border: solid; border-width: 0px; background-color: white"]]);
   node.appendChild(e);
   return e;
 }
@@ -35,18 +152,34 @@ function makeSquares() {
   document.getElementById("board").appendChild(gtable);
   setAtt(gtable,[["style","padding: 0px; margin: 0px; width: 100%; height: 100%;"]])
 
+  //select which board to use based on difficulty selected by user
+  var boardDif = localStorage.getItem("difficulty");
+  if(boardDif == "veryeasy") {
+	  var values = veryEasy;
+  } else if (boardDif == "easy") {
+	  var values = easy;
+  } else if (boardDif == "medium") {
+	  var values = medium;
+  } else if (boardDif == "hard") {
+	  var values = hard;
+  } else if (boardDif == "veryhard") {
+	  var values = veryHard;
+  } else {
+	  var values = sampleValues;
+  }
+  
   for(var y=0; y<9; y++) { // y
     var row = gtable.insertRow(y);
 
     for(var x = 0; x<9; x++) {
         var cell = row.insertCell(x);
-				if(values[y][x] != 0) {
-					setAtt(cell,[["value",String(values[y][x])],["id",String(values[y][x])],["style","text-align: center; width: 43px; height: 34px; border: solid; border-width: 0px; background-color: white"]]);
-					document.getElementById(String(values[y][x])).innerHTML = String(values[y][x]);
-				} else {
-					setAtt(cell, [["style", "padding: 0px;"],["pattern","[0-9]{1,2}"]])
-					var sq = square(cell);
-				}
+		if(values[y][x] != 0) {
+			setAtt(cell,[["value",String(values[y][x])],["id",String(y)+String(x)],["style","text-align: center; width: 43px; height: 34px; border: solid; border-width: 0px; background-color: white"]]);
+			document.getElementById(String(y)+String(x)).innerHTML = String(values[y][x]);
+		} else {
+			setAtt(cell, [["style", "padding: 0px;"]/*,["id",String(y)+String(x)]*/,["pattern","[0-9]{1,2}"]])
+			var sq = square(cell, y, x);
+		}
     }
   }
 }
@@ -107,7 +240,42 @@ function timer(start_time) {
       timer(start_time);
     } else if(ingame == false) {
 			// TODO check solutions
-			alert("The board you have entered is incorrect");
+			var boardDif = localStorage.getItem("difficulty");
+			if(boardDif == "veryeasy") {
+				var valuesol = veryEasySol;
+			} else if (boardDif == "easy") {
+				var valuesol = easySol;
+			} else if (boardDif == "medium") {
+				var valuesol = mediumSol;
+			} else if (boardDif == "hard") {
+				var valuesol = hardSol;
+			} else if (boardDif == "veryhard") {
+				var valuesol = veryHardSol;
+			} else {
+				var valuesol = veryHardSol;
+			}
+				
+			var win = true;	
+			for (var y=0; y<9; y++) {			
+				for (var x=0; x<9; x++) {
+					var cell = document.getElementById(String(y)+String(x));
+					/*alert("cell is: "+y+x+" // value is: "+cell.value+"// inner text is :"+cell.innerText+"solvalue: "+valuesol[y][x]);*/
+					if (cell.innerText == "") {
+						if (cell.value == valuesol[y][x]) {
+							/*alert("cell is: "+y+x+" // value is: "+cell.value+"// inner text is :"+cell.innerText);*/
+						} else {
+							alert("The board you have entered is incorrect");
+							x = 10;
+							y = 10;
+							win = false;
+						}
+					} 				
+				}
+			}
+			if(win == true) {
+				alert("You have entered a CORRECT board!");
+			}
+			
 		} else {
       alert("Time's up!");
 	  window.location.replace("./index.html");
